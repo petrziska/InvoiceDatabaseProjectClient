@@ -73,7 +73,6 @@ const InvoiceForm = () => {
                 setSent(true);
                 setSuccess(false);
             });
-            console.log("Body pro odesilani: ", JSON.stringify(body));
     };
 
 

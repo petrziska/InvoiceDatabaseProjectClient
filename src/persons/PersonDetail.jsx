@@ -21,7 +21,7 @@
  */
 
 import React, {useEffect, useState} from "react";
-import {useParams} from "react-router-dom";
+import {Link, useParams} from "react-router-dom";
 import { apiGet } from "../utils/api";
 
 import Country from "./Country";
@@ -78,6 +78,14 @@ const PersonDetail = () => {
                     <br/>
                     {person.note}
                 </p>
+
+                <Link to={`/identification/${person.identificationNumber}/sales`} className="btn btn-sm btn-info">
+                    Zobrazit seznam vystavených faktur
+                </Link>
+
+                <Link to={`/identification/${person.identificationNumber}/purchases`} className="btn btn-sm btn-info">
+                    Zobrazit seznam přijatých faktur
+                </Link>
             </div>
         </>
     );
