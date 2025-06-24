@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { apiGet } from "../utils/api";
+import { apiGet, apiDelete } from "../utils/api";
 import InvoiceTable from "./InvoiceTable";
 
 const InvoiceIndex = (props) => {
@@ -9,12 +9,17 @@ const InvoiceIndex = (props) => {
         apiGet("/api/invoices").then((data) => setInvoices(data));
     }, []);
 
+    const deleteInvoice = async (id) => {
+        await apiDelete("/api/invoices/" + id);
+        setInvoices(invoiceState.filter((invoice) => invoice._id !== id));
+    };
+
 
     return (
         <div>
             <h1>Faktury</h1>
             <hr />
-            <InvoiceTable items={invoiceState} label="Počet faktur:" />
+            <InvoiceTable deleteInvoice={deleteInvoice} items={invoiceState} label="Počet faktur:" />
         </div>
     );
 };
