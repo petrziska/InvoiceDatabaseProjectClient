@@ -58,7 +58,7 @@ const InvoiceForm = () => {
         };
 
         (id
-            ? apiPut("/api/invoices" + id, body)
+            ? apiPut("/api/invoices/" + id, body)
             : apiPost("/api/invoices", body)
         )
             .then((data) => {
