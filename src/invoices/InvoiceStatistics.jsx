@@ -31,7 +31,7 @@ const InvoiceStatistics = () => {
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
                         <span><strong>Celkový součet všech faktur:</strong></span>
-                        <span className="fs-5 fw-bold">{stats.allTimeSum} Kč</span>
+                        <span className="fs-5 fw-bold">{stats.allTimeSum.toLocaleString()} Kč</span>
                     </li>
                 </ul>
             </div>
