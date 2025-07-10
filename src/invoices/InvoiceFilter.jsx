@@ -15,86 +15,93 @@ const InvoiceFilter = (props) => {
     const filter = props.filter;
 
     return (
-        <form onSubmit={handleSubmit}>
-            <div className="row">
-                <div className="col">
-                    <InputSelect 
-                        name="buyerID"
-                        items={props.buyerList}
-                        handleChange={handleChange}
-                        label="Kupující"
-                        prompt="nevybrán"
-                        value={filter.buyerID}
-                    />
+        <div className="container mt-4">
+            <div className="card shadow-sm border">
+                <div className="card-header bg-light">
+                    <h5 className="mb-0">Filtr faktur</h5>
                 </div>
-                <div className="col">
-                    <InputSelect 
-                        name="sellerID"
-                        items={props.sellerList}
-                        handleChange={handleChange}
-                        label="Prodávájicí"
-                        prompt="nevybrán"
-                        value={filter.sellerID}
-                    />
-                </div>
-            </div>
+                <div className="card-body">
+                    <form onSubmit={handleSubmit}>
+                        <div className="row mb-3">
+                            <div className="col-md-6">
+                                <InputSelect 
+                                    name="buyerID"
+                                    items={props.buyerList}
+                                    handleChange={handleChange}
+                                    label="Kupující"
+                                    prompt="nevybrán"
+                                    value={filter.buyerID}
+                                />
+                            </div>
+                            <div className="col-md-6">
+                                <InputSelect 
+                                    name="sellerID"
+                                    items={props.sellerList}
+                                    handleChange={handleChange}
+                                    label="Prodávájicí"
+                                    prompt="nevybrán"
+                                    value={filter.sellerID}
+                                />
+                            </div>
+                        </div>
 
-            <div className="row">
-                <div className="col">
-                    <InputField 
-                        type="number"
-                        min="0"
-                        name="minPrice"
-                        handleChange={handleChange}
-                        label="Minimální cena"
-                        prompt="neuveden"
-                        value={filter.minPrice ? filter.minPrice : ''}
-                    />
-                </div>
-                <div className="col">
-                    <InputField 
-                        type="number"
-                        min="0"
-                        name="maxPrice"
-                        handleChange={handleChange}
-                        label="Maximální cena"
-                        prompt="neuveden"
-                        value={filter.maxPrice ? filter.maxPrice : ''}
-                    />
-                </div>
-                <div className="col">
-                    <InputField 
-                        type="text"
-                        name="product"
-                        handleChange={handleChange}
-                        label="Produkt"
-                        prompt="napiš část názvu produktu"
-                        value={filter.product || ""}
-                    />
-                </div>
-                <div className="col">
-                    <InputField 
-                        type="number"
-                        min="1"
-                        name="limit"
-                        handleChange={handleChange}
-                        label="Limit poču faktur"
-                        prompt="neuveden"
-                        value={filter.limit ? filter.limit : ''}
-                    />
-                </div>
-            </div>
+                        <div className="row mb-3">
+                            <div className="col-md-3">
+                                <InputField 
+                                    type="number"
+                                    min="0"
+                                    name="minPrice"
+                                    handleChange={handleChange}
+                                    label="Minimální cena"
+                                    prompt="neuveden"
+                                    value={filter.minPrice ? filter.minPrice : ''}
+                                />
+                            </div>
+                            <div className="col-md-3">
+                                <InputField 
+                                    type="number"
+                                    min="0"
+                                    name="maxPrice"
+                                    handleChange={handleChange}
+                                    label="Maximální cena"
+                                    prompt="neuveden"
+                                    value={filter.maxPrice ? filter.maxPrice : ''}
+                                />
+                            </div>
+                            <div className="col-md-3">
+                                <InputField 
+                                    type="text"
+                                    name="product"
+                                    handleChange={handleChange}
+                                    label="Produkt"
+                                    prompt="napiš část názvu produktu"
+                                    value={filter.product || ""}
+                                />
+                            </div>
+                            <div className="col-md-3">
+                                <InputField 
+                                    type="number"
+                                    min="1"
+                                    name="limit"
+                                    handleChange={handleChange}
+                                    label="Limit poču faktur"
+                                    prompt="neuveden"
+                                    value={filter.limit ? filter.limit : ''}
+                                />
+                            </div>
+                        </div>
 
-            <div className="row">
-                <div className="col">
-                    <input 
-                        type="submit"
-                        className="btn btn-secondary float-right mt-2"
-                        value={props.confirm}
-                    />
+                        <div className="d-flex justify-content-end">
+                            <input 
+                                type="submit"
+                                className="btn btn-secondary float-right mt-2"
+                                value={props.confirm}
+                            />
+                        </div>
+                    </form>
                 </div>
             </div>
-        </form>
+        </div>
     );
 };
 

@@ -62,38 +62,90 @@ const InvoiceDetail = () => {
     const issued = new Date(invoice.issued).toLocaleString();
 
     return (
-        <div>
-            <h1>Detail faktury č. {invoice.invoiceNumber}</h1>
-            <hr />
-            <h2>Obecné informace</h2>
-            <p><strong>Datum vystavení:</strong> {invoice.issued}</p>
-            <p><strong>Splatnost:</strong> {invoice.dueDate}</p>
-            <p><strong>Produkt:</strong> {invoice.product}</p>
-            <p><strong>Cena bez DPH:</strong> {invoice.price}</p>
-            <p><strong>DPH:</strong> {invoice.vat} %</p>
-            <p><strong>Poznámka:</strong> {invoice.note}</p>
+        <div className="container mt-5 mb-4">
+            <h1 className="mb-4">Detail faktury č. {invoice.invoiceNumber}</h1>
+            <div className="card shadow-sm">
+                <div className="card-header bg-light">
+                    <h2>Obecné informace</h2>
+                </div>
+                <div className="card-body">
+                    <dl className="row mb-0">
+                        <dt className="col-sm-3">Datum vystavení:</dt> 
+                        <dd className="col-sm-9">{invoice.issued}</dd>
 
-            <hr />
+                        <dt className="col-sm-3">Splatnost:</dt>
+                        <dd className="col-sm-9">{invoice.dueDate}</dd>
 
-            <h2>Odběratel</h2>
-            <p><strong>Název:</strong> {invoice.buyer?.name}</p>
-            <p><strong>IČO:</strong> {invoice.buyer?.identificationNumber}</p>
-            <p><strong>DIČ:</strong> {invoice.buyer?.taxNumber}</p>
-            <p><strong>Email:</strong> {invoice.buyer?.mail}</p>
-            <p><strong>Telefon:</strong> {invoice.buyer?.telephone}</p>
-            <p><strong>Adresa:</strong> {invoice.buyer?.street}, {invoice.buyer?.zip} {invoice.buyer?.city}, {invoice.buyer?.country}</p>
-            <p><strong>Poznámka:</strong> {invoice.buyer?.note}</p>
+                        <dt className="col-sm-3">Produkt:</dt>
+                        <dd className="col-sm-9">{invoice.product}</dd>
 
-            <hr />
+                        <dt className="col-sm-3">Cena bez DPH:</dt>
+                        <dd className="col-sm-9">{invoice.price}</dd>
 
-            <h2>Dodavatel</h2>
-            <p><strong>Název:</strong> {invoice.seller?.name}</p>
-            <p><strong>IČO:</strong> {invoice.seller?.identificationNumber}</p>
-            <p><strong>DIČ:</strong> {invoice.seller?.taxNumber}</p>
-            <p><strong>Email:</strong> {invoice.selller?.mail}</p>
-            <p><strong>Telefon:</strong> {invoice.seller?.telephone}</p>
-            <p><strong>Adresa:</strong> {invoice.seller?.street}, {invoice.seller?.zip} {invoice.seller?.city}, {invoice.seller?.country}</p>
-            <p><strong>Poznámka:</strong> {invoice.seller?.note}</p>
+                        <dt className="col-sm-3">DPH:</dt>
+                        <dd className="col-sm-9">{invoice.vat}</dd>
+
+                        <dt className="col-sm-3">Poznámka:</dt>
+                        <dd className="col-sm-9">{invoice.note}</dd>
+                    </dl>
+                </div>
+
+                <div className="card-header bg-light">
+                    <h2>Odběratel</h2>
+                </div>
+                <div className="card-body">
+                    <dl className="row mb-0">
+                        <dt className="col-sm-3">Název:</dt> 
+                        <dd className="col-sm-9">{invoice.buyer?.name}</dd>
+
+                        <dt className="col-sm-3">IČO:</dt>
+                        <dd className="col-sm-9">{invoice.buyer?.identificationNumber}</dd>
+
+                        <dt className="col-sm-3">DIČ:</dt>
+                        <dd className="col-sm-9">{invoice.buyer?.taxNumber}</dd>
+
+                        <dt className="col-sm-3">Email:</dt>
+                        <dd className="col-sm-9">{invoice.buyer?.mail}</dd>
+
+                        <dt className="col-sm-3">Telefon:</dt>
+                        <dd className="col-sm-9">{invoice.buyer?.telephone}</dd>
+
+                        <dt className="col-sm-3">Adresa:</dt>
+                        <dd className="col-sm-9">{invoice.buyer?.street}, {invoice.buyer?.zip} {invoice.buyer?.city}, {invoice.buyer?.country}</dd>
+
+                        <dt className="col-sm-3">Poznámka:</dt>
+                        <dd className="col-sm-9">{invoice.buyer?.note}</dd>
+                    </dl>
+                </div>
+
+                <div className="card-header bg-light">
+                    <h2>Dodavatel</h2>
+                </div>
+                <div className="card-body">
+                    <dl className="row mb-0">
+                        <dt className="col-sm-3">Název:</dt> 
+                        <dd className="col-sm-9">{invoice.seller?.name}</dd>
+
+                        <dt className="col-sm-3">IČO:</dt>
+                        <dd className="col-sm-9">{invoice.seller?.identificationNumber}</dd>
+
+                        <dt className="col-sm-3">DIČ:</dt>
+                        <dd className="col-sm-9">{invoice.seller?.taxNumber}</dd>
+
+                        <dt className="col-sm-3">Email:</dt>
+                        <dd className="col-sm-9">{invoice.seller?.mail}</dd>
+
+                        <dt className="col-sm-3">Telefon:</dt>
+                        <dd className="col-sm-9">{invoice.seller?.telephone}</dd>
+
+                        <dt className="col-sm-3">Adresa:</dt>
+                        <dd className="col-sm-9">{invoice.seller?.street}, {invoice.seller?.zip} {invoice.seller?.city}, {invoice.seller?.country}</dd>
+
+                        <dt className="col-sm-3">Poznámka:</dt>
+                        <dd className="col-sm-9">{invoice.seller?.note}</dd>
+                    </dl>
+                </div>
+            </div>
         </div>
     );
 };

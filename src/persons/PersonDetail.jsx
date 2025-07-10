@@ -43,49 +43,49 @@ const PersonDetail = () => {
 
     return (
         <>
-            <div>
-                <h1>Detail osoby</h1>
-                <hr/>
-                <h3>{person.name} ({person.identificationNumber})</h3>
-                <p>
-                    <strong>DIČ:</strong>
-                    <br/>
-                    {person.taxNumber}
-                </p>
-                <p>
-                    <strong>Bankovní účet:</strong>
-                    <br/>
-                    {person.accountNumber}/{person.bankCode} ({person.iban})
-                </p>
-                <p>
-                    <strong>Tel.:</strong>
-                    <br/>
-                    {person.telephone}
-                </p>
-                <p>
-                    <strong>Mail:</strong>
-                    <br/>
-                    {person.mail}
-                </p>
-                <p>
-                    <strong>Sídlo:</strong>
-                    <br/>
-                    {person.street}, {person.city},
-                    {person.zip}, {country}
-                </p>
-                <p>
-                    <strong>Poznámka:</strong>
-                    <br/>
-                    {person.note}
-                </p>
+            <div className="container mt-5">
+                <h1 className="mb-4">Detail osoby</h1>
+                <div className="card shadow-sm">
+                    <div className="card-header bg-light">
+                        <h3>{person.name} ({person.identificationNumber})</h3>
+                    </div>
 
-                <Link to={`/identification/${person.identificationNumber}/sales`} className="btn btn-sm btn-info">
-                    Zobrazit seznam vystavených faktur
-                </Link>
+                    <div className="card-body">
+                        <dl className="row mb-0">
+                            <dt className="col-sm-3">DIČ:</dt>
+                            <dd className="col-sm-9">{person.taxNumber}</dd>
 
-                <Link to={`/identification/${person.identificationNumber}/purchases`} className="btn btn-sm btn-info">
-                    Zobrazit seznam přijatých faktur
-                </Link>
+                            <dt className="col-sm-3">Bankovní účet:</dt>
+                            <dd className="col-sm-9">{person.accountNumber}/{person.bankCode} <br />
+                                <small className="text-muted">IBAN: {person.iban}</small>
+                            </dd>
+
+                            <dt className="col-sm-3">Telefon:</dt>
+                            <dd className="col-sm-9">{person.telephone}</dd>
+
+                            <dt className="col-sm-3">E-mail:</dt>
+                            <dd className="col-sm-9">{person.mail}</dd>
+
+                            <dt className="col-sm-3">Sídlo:</dt>
+                            <dd className="col-sm-9">
+                                {person.street}, {person.city}, {person.zip}, {country}
+                            </dd>
+
+                            <dt className="col-sm-3">Poznámka:</dt>
+                            <dd className="col-sm-9">{person.note}</dd>
+                        </dl>    
+                    </div>
+                
+                    <div className="card-footer bg-light d-flex justify-content-start gap-2">
+                        <Link to={`/identification/${person.identificationNumber}/sales`} className="btn btn-outline-primary btn-sm">
+                            Vystavené faktury
+                        </Link>
+
+                        <Link to={`/identification/${person.identificationNumber}/purchases`} className="btn btn-outline-secondary btn-sm">
+                            Přijaté faktury
+                        </Link>
+                    </div>
+                </div>
             </div>
         </>
     );

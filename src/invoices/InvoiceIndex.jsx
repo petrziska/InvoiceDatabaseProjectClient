@@ -48,9 +48,8 @@ const InvoiceIndex = (props) => {
 
     return (
         <div>
-            <h1>Faktury</h1>
-            <hr />
-            <InvoiceFilter 
+            <h1 className="container mt-5">Faktury</h1>
+            <InvoiceFilter
                 handleChange={handleChange}
                 handleSubmit={handleSubmit}
                 buyerList={buyerListState}
@@ -58,7 +57,6 @@ const InvoiceIndex = (props) => {
                 filter={filterState}
                 confirm="Filtrovat filmy"
             />
-            <hr />
             <InvoiceTable deleteInvoice={deleteInvoice} items={invoiceState} label="Počet faktur:" />
         </div>
     );

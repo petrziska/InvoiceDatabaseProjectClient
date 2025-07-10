@@ -17,21 +17,21 @@ const InvoiceStatistics = () => {
         <div className="container mt-5">
             <h1 className="mb-4">Statistiky faktur</h1>
             <div className="card shadow-sm">
-                <div className="card-header bg-primary text-white fw-semibold">
+                <div className="card-header bg-light fw-bold">
                     Přehled fakturačních údajů
                 </div>
                 <ul className="list-group list-group-flush">
                     <li className="list-group-item d-flex justify-content-between align-items-center">
-                        <span><strong>Počet faktur:</strong></span>
+                        <span>Počet faktur:</span>
                         <span className="fs-5 fw-bold">{stats.invoicesCount}</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
-                        <span><strong>Součet za aktuální rok:</strong></span>
+                        <span>Součet za aktuální rok:</span>
                         <span className="fs-5 fw-bold">{stats.currentYearSum} Kč</span>
                     </li>
                     <li className="list-group-item d-flex justify-content-between align-items-center">
-                        <span><strong>Celkový součet všech faktur:</strong></span>
-                        <span className="fs-5 fw-bold">{stats.allTimeSum.toLocaleString()} Kč</span>
+                        <span>Celkový součet všech faktur:</span>
+                        <span className="fs-5 fw-bold">{stats.allTimeSum} Kč</span>
                     </li>
                 </ul>
             </div>

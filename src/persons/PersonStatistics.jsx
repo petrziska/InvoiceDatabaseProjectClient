@@ -17,7 +17,7 @@ const PersonStatistics = () => {
         <div className="container mt-5">
             <h1 className="mb-4">Statistiky osob</h1>
             <div className="card shadow-sm">
-                <div className="card-header bg-primary text-white fw-semibold">
+                <div className="card-header bg-light fw-bold">
                     Přehled osob a jejích příjmů
                 </div>
                 <ul className="list-group list-group-flush">
@@ -25,10 +25,10 @@ const PersonStatistics = () => {
                         <li key={index} className="list-group-item">
                             <div className="d-flex justify-content-between align-items-center">
                                 <div>
-                                    <span className="fw-bold">{person.personName}</span>
+                                    <span className="fw-semibold">{person.personName}</span>
                                     <div className="text-muted small">Osoba č. {index + 1}</div>
                                 </div>
-                                <span className="fs-5 fw-semibold text-success">
+                                <span className="fs-5 fw-bold">
                                     {person.revenue.toLocaleString()} Kč
                                 </span>
                             </div>

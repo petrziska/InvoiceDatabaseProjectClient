@@ -98,96 +98,146 @@ const InvoiceForm = () => {
     }, [id]);
 
     return (
-        <div>
+        <div className="container mt-4">
             <h1>{id ? "Upravit" : "Vytvořit"} fakturu</h1>
-            <hr />
+            
             {error && <div className="alert alert-danger">{error}</div>}
             {sent && success && (
                 <FlashMessage theme="success" text="Faktura byla úspěšně uložena." />
             )}
 
             <form onSubmit={handleSubmit}>
-                <InputField 
-                    required
-                    name="invoiceNumber"
-                    type="number"
-                    label="Číslo faktury"
-                    prompt="Zadejte číslo"
-                    value={invoiceNumber}
-                    handleChange={handleChange}
-                />
-                <InputSelect 
-                    required
-                    name="buyer"
-                    label="Kupující"
-                    prompt="Vyberte kupujícího"
-                    items={buyerList}
-                    value={buyer}
-                    handleChange={handleChange}
-                />
-                <InputSelect 
-                    required
-                    name="seller"
-                    label="Prodávající"
-                    prompt="Vyberte prodávajícího"
-                    items={sellerList}
-                    value={seller}
-                    handleChange={handleChange}
-                />
-                <InputField 
-                    required
-                    name="issued"
-                    type="date"
-                    label="Datum vystavení"
-                    prompt="Zadejte datum"
-                    value={issued}
-                    handleChange={handleChange}
-                />
-                <InputField 
-                    required
-                    name="dueDate"
-                    type="date"
-                    label="Datum splatnosti"
-                    prompt="Zadejte datum"
-                    value={dueDate}
-                    handleChange={handleChange}
-                />
-                <InputField 
-                    required
-                    name="product"
-                    type="text"
-                    label="Produkt"
-                    prompt="Název produktu"
-                    value={product}
-                    handleChange={handleChange}
-                /> 
-                <InputField 
-                    required
-                    name="price"
-                    type="number"
-                    label="Cena"
-                    prompt="Zadejte cenu"
-                    value={price}
-                    handleChange={handleChange}
-                />
-                <InputField 
-                    required
-                    name="vat"
-                    type="number"
-                    label="DPH"
-                    prompt="Zadejte DPH"
-                    value={vat}
-                    handleChange={handleChange}
-                />
-                <InputField 
-                    name="note"
-                    type="text"
-                    label="Poznámka"
-                    prompt="Doplňující informace"
-                    value={note}
-                    handleChange={handleChange}
-                />
-                <input type="submit" className="btn btn-primary" value="Uložit" /> 
+                <div className="card shadow-sm mb-4 p-3">
+                    <h5>Informace o faktuře</h5>
+
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-md-6 mb-3">
+                                <InputField 
+                                    required
+                                    name="invoiceNumber"
+                                    type="number"
+                                    label="Číslo faktury"
+                                    prompt="Zadejte číslo"
+                                    value={invoiceNumber}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                            <div className="col-md-6 mb-3">
+                                <InputField 
+                                    name="note"
+                                    type="text"
+                                    label="Poznámka"
+                                    prompt="Doplňující informace"
+                                    value={note}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                        </div>
+
+                        <div className="row">
+                            <div className="col-md-6 mb-3">
+                                <InputField 
+                                    required
+                                    name="issued"
+                                    type="date"
+                                    label="Datum vystavení"
+                                    prompt="Zadejte datum"
+                                    value={issued}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                            <div className="col-md-6 mb-3">
+                                <InputField 
+                                    required
+                                    name="dueDate"
+                                    type="date"
+                                    label="Datum splatnosti"
+                                    prompt="Zadejte datum"
+                                    value={dueDate}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div className="card shadow-sm mb-4 p-3">
+                    <h5>Subjekty</h5>
+                        
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-md-6 mb-3">
+                                <InputSelect 
+                                    required
+                                    name="buyer"
+                                    label="Kupující"
+                                    prompt="Vyberte kupujícího"
+                                    items={buyerList}
+                                    value={buyer}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                            <div className="col-md-6 mb-3">
+                                <InputSelect 
+                                    required
+                                    name="seller"
+                                    label="Prodávající"
+                                    prompt="Vyberte prodávajícího"
+                                    items={sellerList}
+                                    value={seller}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div className="card shadow-sm mb-4 p-3">
+                    <h5>Položka a cena</h5>
+                        
+                    
+                
+                    <div className="card-body">
+                        <div className="row">
+                            <div className="col-md-4 mb-3">
+                                <InputField 
+                                    required
+                                    name="product"
+                                    type="text"
+                                    label="Produkt"
+                                    prompt="Název produktu"
+                                    value={product}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                            <div className="col-md-4 mb-3">
+                                <InputField 
+                                    required
+                                    name="price"
+                                    type="number"
+                                    label="Cena"
+                                    prompt="Zadejte cenu"
+                                    value={price}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                            <div className="col-md-4 mb-3">
+                                <InputField 
+                                    required
+                                    name="vat"
+                                    type="number"
+                                    label="DPH"
+                                    prompt="Zadejte DPH"
+                                    value={vat}
+                                    handleChange={handleChange}
+                                />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <input type="submit" className="btn btn-outline-primary mb-3 btn-lg px-5" value="Uložit" />
             </form>
         </div>
     );

@@ -45,7 +45,7 @@ const PersonIndex = () => {
 
     return (
         <div>
-            <h1>Seznam osob</h1>
+            <h1 className="container mt-5">Seznam osob</h1>
             <PersonTable
                 deletePerson={deletePerson}
                 items={persons}

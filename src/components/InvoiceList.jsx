@@ -14,37 +14,42 @@ const InvoiceList = ({ type }) => {
     }, [identificationNumber, type]);
 
     return (
-        <div>
-            <h2>
-                {type === "sales" ? "Vystavené faktury" : "Přijaté faktury"} osoby s IČ: {identificationNumber}
+        <div className="container mt-4">
+            <h2 className="mb-4">
+                {type === "sales" ? "Vystavené faktury" : "Přijaté faktury"} osoby s IČ: <strong>{identificationNumber}</strong>
             </h2>
             {invoices.length === 0 ? (
-                <p>Žádné faktury nebyly nalezeny.</p>
+                <div className="alert alert-info">Žádné faktury nebyly nalezeny.</div>
             ) : (
-                <table className="table">
-                    <thead>
-                        <tr>
-                            <th>Číslo faktury</th>
-                            <th>Produkt</th>
-                            <th>Cena</th>
-                            <th></th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        {invoices.map((invoice) => (
-                            <tr key={invoice._id}>
-                                <td>{invoice.invoiceNumber}</td>
-                                <td>{invoice.product}</td>
-                                <td>{invoice.price}</td>
-                                <td>
-                                    <Link to={"/invoices/" + invoice._id} className="btn btn-sm btn-primary">
-                                    Detail faktury
-                                    </Link>
-                                </td>
-                            </tr>
-                        ))}
-                    </tbody>
-                </table>
+            
+                <div className="card shadow-sm">
+                    <div className="card-body p-0">
+                        <table className="table table-hover mb-0">
+                            <thead className="table-light">
+                                <tr>
+                                    <th>Číslo faktury</th>
+                                    <th>Produkt</th>
+                                    <th>Cena</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {invoices.map((invoice) => (
+                                    <tr key={invoice._id}>
+                                        <td>{invoice.invoiceNumber}</td>
+                                        <td>{invoice.product}</td>
+                                        <td>{invoice.price}</td>
+                                        <td>
+                                            <Link to={"/invoices/" + invoice._id} className="btn btn-sm btn-outline-primary">
+                                            Detail faktury
+                                            </Link>
+                                        </td>
+                                    </tr>
+                                ))}
+                            </tbody>
+                        </table>
+                    </div>    
+                </div>
             )}
         </div>
     );

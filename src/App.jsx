@@ -49,24 +49,24 @@ export function App() {
           <ul className="navbar-nav mr-auto">
             <li className="nav-item">
               <Link to={"/persons"} className="nav-link">
-                Osoby
+                <strong>Osoby</strong>
               </Link>
             </li>
 
             <li className="nav-item">
               <Link to={"/invoices"} className="nav-link">
-                Faktury
+                <strong>Faktury</strong>
               </Link>
             </li>
 
             <li className="nav-item">
               <Link to={"/invoices/statistics"} className="nav-link">
-                Statistiky faktur
+                <strong>Statistiky faktur</strong>
               </Link>
             </li>
             <li className="nav-item">
               <Link to={"/persons/statistics"} className="nav-link">
-                Statistiky osob
+                <strong>Statistiky osob</strong>
               </Link>
             </li>
           </ul>
