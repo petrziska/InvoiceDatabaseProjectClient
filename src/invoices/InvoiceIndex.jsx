@@ -3,6 +3,14 @@ import { apiGet, apiDelete } from "../utils/api";
 import InvoiceTable from "./InvoiceTable";
 import InvoiceFilter from "./InvoiceFilter";
 
+
+/**
+ * Komponenta `InvoiceIndex` je hlavní přehledová stránka faktur.
+ *
+ * - Načítá všechny faktury i seznam osob (kupující/prodávající) při prvním renderu.
+ * - Umožňuje filtrovat faktury pomocí formuláře (`InvoiceFilter`).
+ * - Zobrazuje faktury v tabulce (`InvoiceTable`) s možností mazání.
+ */
 const InvoiceIndex = (props) => {
     const [invoiceState, setInvoices] = useState([]);
     const [buyerListState, setBuyerList] = useState([]);

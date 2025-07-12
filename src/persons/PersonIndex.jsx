@@ -1,25 +1,15 @@
-/*  _____ _______         _                      _
- * |_   _|__   __|       | |                    | |
- *   | |    | |_ __   ___| |___      _____  _ __| | __  ___ ____
- *   | |    | | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / / __|_  /
- *  _| |_   | | | | |  __/ |_ \ V  V / (_) | |  |   < | (__ / /
- * |_____|  |_|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_(_)___/___|
- *                                _
- *              ___ ___ ___ _____|_|_ _ _____
- *             | . |  _| -_|     | | | |     |  LICENCE
- *             |  _|_| |___|_|_|_|_|___|_|_|_|
- *             |_|
+/**
+ *PersonIndex - komponenta pro zobrazení seznamu osob.
  *
- *   PROGRAMOVÁNÍ  <>  DESIGN  <>  PRÁCE/PODNIKÁNÍ  <>  HW A SW
- *
- * Tento zdrojový kód je součástí výukových seriálů na
- * IT sociální síti WWW.ITNETWORK.CZ
- *
- * Kód spadá pod licenci prémiového obsahu a vznikl díky podpoře
- * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
- * Více informací na http://www.itnetwork.cz/licence
+ * Funkce:
+ * - Načítá ze serveru seznam osob při prvním renderu komponenty (useEffect).
+ * - Ukládá seznam osob do stavové proměnné `persons`.
+ * - Umožňuje smazat osobu pomocí funkce `deletePerson`, která:
+ *    - Zavolá API endpoint pro smazání osoby podle `id`.
+ *    - Pokud dojde k chybě, vypíše ji do konzole a zobrazí alert.
+ *    - Po úspěšném smazání aktualizuje stav `persons` odstraněním smazané osoby.
+ * - Zobrazu
  */
-
 import React, {useEffect, useState} from "react";
 
 import {apiDelete, apiGet} from "../utils/api";

@@ -1,25 +1,3 @@
-/*  _____ _______         _                      _
- * |_   _|__   __|       | |                    | |
- *   | |    | |_ __   ___| |___      _____  _ __| | __  ___ ____
- *   | |    | | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / / __|_  /
- *  _| |_   | | | | |  __/ |_ \ V  V / (_) | |  |   < | (__ / /
- * |_____|  |_|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_(_)___/___|
- *                                _
- *              ___ ___ ___ _____|_|_ _ _____
- *             | . |  _| -_|     | | | |     |  LICENCE
- *             |  _|_| |___|_|_|_|_|___|_|_|_|
- *             |_|
- *
- *   PROGRAMOVÁNÍ  <>  DESIGN  <>  PRÁCE/PODNIKÁNÍ  <>  HW A SW
- *
- * Tento zdrojový kód je součástí výukových seriálů na
- * IT sociální síti WWW.ITNETWORK.CZ
- *
- * Kód spadá pod licenci prémiového obsahu a vznikl díky podpoře
- * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
- * Více informací na http://www.itnetwork.cz/licence
- */
-
 import React, {useEffect, useState} from "react";
 import {useNavigate, useParams} from "react-router-dom";
 
@@ -31,6 +9,20 @@ import FlashMessage from "../components/FlashMessage";
 
 import Country from "./Country";
 
+/**
+ * PersonForm - komponenta pro vytvoření nebo úpravu osoby.
+ * Funkce:
+ * 
+ * - Načte data osoby podle parametru `id` z URL (pokud je `id` zadáno),
+ *   jinak připraví prázdný formulář pro novou osobu.
+ * - Umožňuje uživateli upravit nebo vyplnit údaje osoby.
+ * - Po odeslání formuláře (submit) odešle data na backend pomocí API.
+ *   - Pokud existuje `id`, použije PUT (aktualizace).
+ *   - Jinak použije POST (vytvoření nové osoby).
+ * - Po úspěšném uložení přesměruje uživatele zpět na seznam osob.
+ * - Zobrazuje chybové hlášení, pokud nastane chyba během uložení.
+ * - Zobrazuje potvrzovací hlášku po odeslání (úspěch/neúspěch).
+ */
 const PersonForm = () => {
     const navigate = useNavigate();
     const {id} = useParams();

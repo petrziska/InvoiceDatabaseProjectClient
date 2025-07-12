@@ -1,3 +1,8 @@
+/**
+ * InputCheck je univerzální komponenta pro formulářové vstupy typu `checkbox` nebo `radio`.
+ * Slouží k výběru jedné nebo více hodnot pomocí zaškrtávacích polí nebo přepínačů.
+ */
+
 export function InputCheck(props) {
   // podporované typy pro element input
   const INPUTS = ["checkbox", "radio"];

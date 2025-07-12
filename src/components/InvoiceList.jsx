@@ -2,6 +2,11 @@ import React, { useEffect, useState} from "react";
 import { Link, useNavigate, useParams } from "react-router-dom";
 import { apiGet } from "../utils/api";
 
+/**
+ *  * InvoiceList je komponenta, která zobrazuje seznam vystavených nebo přijatých faktur
+ * pro danou osobu na základě jejího IČ (identifikačního čísla). Data se načítají z REST API
+ * na základě parametru z URL a z prop `type`.
+ */
 const InvoiceList = ({ type }) => {
     const { identificationNumber } = useParams();
     const [invoices, setInvoices] = useState([]);

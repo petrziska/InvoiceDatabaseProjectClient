@@ -7,6 +7,14 @@ import FlashMessage from "../components/FlashMessage";
 import InputField from "../components/InputField";
 import InputSelect from "../components/InputSelect";
 
+/**
+ * InvoiceForm komponenta slouží pro vytvoření nebo úpravu faktury.
+ *
+ * Podle přítomnosti `id` v URL zjistí, zda jde o úpravu existující faktury (GET + PUT),
+ * nebo o vytvoření nové faktury (POST). Zobrazuje formulář s částmi pro základní údaje,
+ * subjekty a produktové položky. Využívá komponenty `InputField`, `InputSelect` a `FlashMessage`. 
+ */
+
 const InvoiceForm = () => {
     const { id } = useParams();
     const navigate = useNavigate();

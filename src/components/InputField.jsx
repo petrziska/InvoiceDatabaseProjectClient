@@ -1,5 +1,11 @@
 import React from "react";
 
+/**
+ * InputField je univerzální formulářová komponenta, která vykresluje `<input>` nebo `<textarea>`
+ * dle typu zadaného pomocí props. Podporuje validaci typu, minimální hodnoty nebo délky,
+ * a správné přiřazení atributů.
+ */
+
 export function InputField(props) {
   // podporované typy pro element input
   const INPUTS = ["text", "number", "date"];

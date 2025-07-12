@@ -1,6 +1,13 @@
 import React, { useEffect, useState } from "react";
 import { apiGet } from "../utils/api";
 
+
+/**
+ * Komponenta `InvoiceStatistics` slouží pro zobrazení základních statistických údajů o fakturách.
+ *
+ * Po načtení komponenty automaticky zavolá API endpoint `/api/invoices/statistics` pro získání dat.
+ * Pokud dojde k chybě při načítání, zobrazí chybovou hlášku.
+ */
 const InvoiceStatistics = () => {
     const [stats, setStats] = useState("");
     const [error, setError] = useState("");

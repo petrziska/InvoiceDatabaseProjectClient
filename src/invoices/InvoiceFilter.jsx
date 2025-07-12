@@ -2,6 +2,14 @@ import React from "react";
 import InputSelect from "../components/InputSelect";
 import InputField from "../components/InputField";
 
+/**
+ *  InvoiceFilter je komponenta, která zobrazuje formulář pro filtrování faktur
+ * podle více kritérií (kupující, prodávající, cena, produkt, limit).
+ * Využívá vlastní komponenty `InputSelect` a `InputField`.
+ *
+ * Slouží jako nadřazený komponentě, která zobrazuje seznam faktur a předává
+ * filtrační kritéria přes props.
+ */
 const InvoiceFilter = (props) => {
 
     const handleChange = (e) => {

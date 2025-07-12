@@ -1,6 +1,18 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+/**
+ * Komponenta `InvoiceTable` zobrazuje tabulku faktur.
+ * 
+ * Funkčnost:
+ * - V tabulce zobrazí každou fakturu s pořadovým číslem, poznámkou a tlačítky:
+ *   - Detail faktury (přesměrování na detail faktury)
+ *   - Upravit fakturu (přesměrování na editaci)
+ *   - Odstranit fakturu (volá funkci deleteInvoice)
+ * - Zobrazuje počet položek v badge v hlavičce tabulky
+ * - Ve footeru je tlačítko pro vytvoření nové faktury
+ */
+
 const InvoiceTable = ({label, items, deleteInvoice }) => {
     return (
         <div className="container mt-5 mb-4">

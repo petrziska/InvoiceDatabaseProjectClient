@@ -1,5 +1,10 @@
 import React from "react";
 
+/**
+ * InputSelect je univerzální komponenta pro výběr z možností pomocí `<select>`.
+ * Podporuje jednoduchý i vícenásobný výběr, práci s výčty (`enum`) i objekty z databáze.
+ */
+
 export function InputSelect(props) {
   const multiple = props.multiple;
   const required = props.required || false;

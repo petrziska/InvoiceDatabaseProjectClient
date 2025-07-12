@@ -3,6 +3,13 @@ import { useParams } from "react-router-dom";
 
 import { apiGet } from "../utils/api";
 
+/**
+ * Komponenta `InvoiceDetail` načítá detailní informace o konkrétní faktuře
+ * pomocí jejího ID z URL (parametr `:id`) a zobrazuje je v přehledné formě.
+ * 
+ * Zahrnuje sekce: obecné informace, odběratel a dodavatel.
+ */
+
 const InvoiceDetail = () => {
 
     const { id } = useParams();

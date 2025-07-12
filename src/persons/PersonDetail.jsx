@@ -1,30 +1,19 @@
-/*  _____ _______         _                      _
- * |_   _|__   __|       | |                    | |
- *   | |    | |_ __   ___| |___      _____  _ __| | __  ___ ____
- *   | |    | | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / / __|_  /
- *  _| |_   | | | | |  __/ |_ \ V  V / (_) | |  |   < | (__ / /
- * |_____|  |_|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_(_)___/___|
- *                                _
- *              ___ ___ ___ _____|_|_ _ _____
- *             | . |  _| -_|     | | | |     |  LICENCE
- *             |  _|_| |___|_|_|_|_|___|_|_|_|
- *             |_|
- *
- *   PROGRAMOVÁNÍ  <>  DESIGN  <>  PRÁCE/PODNIKÁNÍ  <>  HW A SW
- *
- * Tento zdrojový kód je součástí výukových seriálů na
- * IT sociální síti WWW.ITNETWORK.CZ
- *
- * Kód spadá pod licenci prémiového obsahu a vznikl díky podpoře
- * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
- * Více informací na http://www.itnetwork.cz/licence
- */
 
 import React, {useEffect, useState} from "react";
 import {Link, useParams} from "react-router-dom";
 import { apiGet } from "../utils/api";
 
 import Country from "./Country";
+
+/**
+ * Komponenta PersonDetail zobrazuje detailní informace o osobě podle jejího ID.
+ * 
+ * - Načítá data osoby z API pomocí parametru `id` z URL (useParams).
+ * - Používá stav `person` pro uložení načtených dat.
+ * - Po načtení dat zobrazí informace o osobě v přehledné kartě.
+ * - Převádí hodnotu země pomocí konstant z enumu `Country` na český název.
+ * - Obsahuje odkazy na faktury vystavené a přijaté danou osobou (používá identifikační číslo).
+ */
 
 const PersonDetail = () => {
     const {id} = useParams();

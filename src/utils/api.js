@@ -1,25 +1,35 @@
-/*  _____ _______         _                      _
- * |_   _|__   __|       | |                    | |
- *   | |    | |_ __   ___| |___      _____  _ __| | __  ___ ____
- *   | |    | | '_ \ / _ \ __\ \ /\ / / _ \| '__| |/ / / __|_  /
- *  _| |_   | | | | |  __/ |_ \ V  V / (_) | |  |   < | (__ / /
- * |_____|  |_|_| |_|\___|\__| \_/\_/ \___/|_|  |_|\_(_)___/___|
- *                                _
- *              ___ ___ ___ _____|_|_ _ _____
- *             | . |  _| -_|     | | | |     |  LICENCE
- *             |  _|_| |___|_|_|_|_|___|_|_|_|
- *             |_|
- *
- *   PROGRAMOVÁNÍ  <>  DESIGN  <>  PRÁCE/PODNIKÁNÍ  <>  HW A SW
- *
- * Tento zdrojový kód je součástí výukových seriálů na
- * IT sociální síti WWW.ITNETWORK.CZ
- *
- * Kód spadá pod licenci prémiového obsahu a vznikl díky podpoře
- * našich členů. Je určen pouze pro osobní užití a nesmí být šířen.
- * Více informací na http://www.itnetwork.cz/licence
+/**
+ * API helper functions pro komunikaci s backendem na základě Fetch API.
+ * 
+ * Konstanty:
+ * - API_URL: základní URL adresa API serveru.
+ * 
+ * Funkce:
+ * 
+ * fetchData(url: string, requestOptions: object): Promise<any | void>
+ * - Obecná funkce pro fetch požadavky.
+ * - Přidá základní URL k relativnímu url.
+ * - Zpracuje odpověď, pokud není status OK, vyhodí chybu.
+ * - U metody DELETE nevrací json, u ostatních ano.
+ * - V případě chyby vyhodí chybu dál.
+ * 
+ * apiGet(url: string, params?: object): Promise<any>
+ * - Provede GET požadavek na zadanou url.
+ * - Podporuje nepovinné parametry jako objekt, které přidá do query stringu.
+ * - Parametry s hodnotou null nebo undefined ignoruje.
+ * 
+ * apiPost(url: string, data: object): Promise<any>
+ * - Provede POST požadavek na zadanou url.
+ * - Posílá data v JSON formátu v těle požadavku.
+ * 
+ * apiPut(url: string, data: object): Promise<any>
+ * - Provede PUT požadavek na zadanou url.
+ * - Posílá data v JSON formátu v těle požadavku.
+ * 
+ * apiDelete(url: string): Promise<void>
+ * - Provede DELETE požadavek na zadanou url.
+ * - Nečeká tělo odpovědi (nevrací JSON).
  */
-
 
 const API_URL = "http://localhost:8080";
 

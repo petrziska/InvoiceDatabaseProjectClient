@@ -1,6 +1,18 @@
 import React, { useEffect, useState } from "react";
 import { apiGet } from "../utils/api";
 
+/**
+ * PersonStatistics - komponenta pro zobrazení statistik osob a jejich příjmů.
+ *
+ * Popis:
+ * - Načítá statistiky osob z API volání na endpoint "/api/persons/statistics".
+ * - V případě chyby zobrazí chybovou hlášku.
+ * - Statistiky jsou zobrazeny v seznamu, kde každý řádek ukazuje:
+ *   - jméno osoby (personName)
+ *   - pořadové číslo osoby v seznamu
+ *   - celkový příjem osoby (revenue), formátovaný jako číslo s oddělovači tisíců a měnou Kč.
+*/
+
 const PersonStatistics = () => {
     const [stats, setStats] = useState([]);
     const [error, setError] = useState("");
